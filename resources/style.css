@@ -3,7 +3,10 @@ body {
   margin:0;
   font-family:"Roboto", sans-serif;
 }
-
+/*hide on desktop rule*/
+ .hideDesktop {
+  display:none !important;
+}
 /*header and footer nav styling*/
 header,
 footer {
@@ -36,8 +39,8 @@ footer nav {
   display:flex;
   align-items:center;
 }
-header nav span,
-footer nav span {
+header nav a,
+footer nav a {
   padding-right:16px;
 }
 footer h3 {
@@ -305,4 +308,125 @@ footer nav a:hover {
   transition-timing-function: ease-in-out;
 }
 
-/*mobile overrides*/
+/*responsive overrides*/
+/*Older monitors */
+@media only screen and (max-width:1280px) and (min-width: 880px) {
+  .jumbotronText h1 {
+    font-size:3em;
+    margin: 17px 0;
+  }
+  .jumbotronText h2 {
+    font-size:2.2em;
+  }
+  .jumbotronButton {
+    font-size:1.2em;
+  }
+  .classContainer .classCard h2 {
+    font-size:1.9em;
+  }
+  .thesisContainer .thesisMain {
+    max-width:45%;
+  }
+}
+/*Mobile and tablets */
+@media only screen and (max-width:879px) {
+  .hideDesktop {
+    display:block !important;
+  }
+  .hideMobile,
+  header h2,
+  header nav span,
+  .newsContainer .newsMain,
+  .classCardContainer .classCard img,
+  .classCardContainer .classCard p,
+  .thesisSidebar,
+  .thesisContainer .thesisMain h2,
+  .thesisContainer .thesisMain p,
+  footer nav {
+    display:none !important;
+  }
+  header {
+    width:100%;
+    align-items:center;
+  }
+  header nav {
+    width:100%;
+    justify-content:space-around;
+  }
+  header .headerContainer {
+    flex-grow:0;
+    padding-right:24px;
+  }
+  .jumbotronContainer {
+    display:block;
+  }
+  .jumbotronContainer img {
+    width:100%;
+    padding:0;
+  }
+  .jumbotronText {
+    display:flex;
+    align-items:center;
+    text-align:center;
+    width:100%;
+    padding:0 0 32px 0;
+  }
+  .newsSidebar {
+    display:flex;
+    flex-direction:row;
+    flex-flow:wrap;
+  }
+  .newsBox {
+    display:block;
+    padding:0;
+    border:0;
+    margin:32px 16px;
+    width:100%;
+  }
+  .newsBox img {
+    display:block;
+    margin:auto;
+    width:100%;
+  }
+  .newsText {
+    display:block;
+    margin:32px 0 32px 32px;
+  }
+  .classContainer {
+    background-color:white;
+    border-top:1px solid lightGrey;
+    border-bottom:1px solid lightGrey;
+  }
+  .classContainer .classCardContainer {
+    flex-flow:column;
+    align-items:center;
+    padding:0 16px;
+    margin-bottom:32px;
+  }
+  .classContainer .classCardContainer .classCard {
+    flex-direction:row;
+    background-color:lightGrey;
+    margin:0 16px 8px 16px;
+    padding:24px 0 24px 16px;
+    width:90%;
+    max-width:none;
+  }
+  .classContainer .classCardContainer .classCard h2 {
+    margin:0;
+  }
+  .thesisContainer {
+    padding:0;
+    border-bottom:1px solid lightgrey;
+  }
+  .thesisContainer .thesisMain {
+    width:100%;
+    max-width:none;
+    padding:0;
+  }
+  footer {
+    margin:24px 0 0 0;
+  }
+  footer .headerContainer h3 {
+    margin: 16px 0;
+  }
+}
